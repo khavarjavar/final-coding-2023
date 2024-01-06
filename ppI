@@ -198,7 +198,64 @@ int main()
 }
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+#include <stdio.h>
+#include <string.h>
+
+//#define SIZE 6
+
+struct person
+
+{
+    // char name[SIZE]; // 5 bytes + 0
+
+    char surname[11]; // 5 bytes + 0
+
+    int age; // 10..99
+
+    int salary; // 1000..9999
+
+};
+
+struct person p, temp;
+int i, n;
+int main()
+
+{
+
+    FILE* fp;
+
+    fp = fopen("input.txt", "r");
+    // fseek(fp, 0, SEEK_END);
+
+    int min = 1000;
+
+    while (fscanf(fp, "%10s%2d%3d", p.surname, &p.age, &p.salary) == 3)
+
+    {
+
+       
+if (p.salary < min)
+
+        {
+
+            min = p.salary;
+
+        }
+
+    }
+
+    printf("%d\n", min); //  ... 1st line
+
+
+    //int cnt = 0;
+
+
+    return 0;
+
+}
 
 
 
