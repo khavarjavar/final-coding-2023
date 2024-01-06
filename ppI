@@ -147,7 +147,55 @@ int main()
 -------------------------------------------------------------------------------------------------
 
 
+#include <stdio.h>
+#include <string.h>
 
+//#define SIZE 6
+
+struct point
+
+{
+    int x;
+    int y;
+    int z;
+
+} p;
+
+int s = 0;
+int main()
+
+{
+
+    FILE* fp;
+
+    fp = fopen("input.txt", "r");
+    // fseek(fp, 0, SEEK_END);
+
+   // int min = 1000;
+
+    while (fscanf(fp, "%2d%2d%2d", &p.x, &p.y, &p.z) == 3)
+
+    {
+
+        if ((p.x % 2) != 0)
+
+        {
+
+            s += p.z;
+
+        }
+
+    }
+
+    printf("%d\n", s); //  ... 1st line
+
+
+    //int cnt = 0;
+
+
+    return 0;
+
+}
 
 
 
