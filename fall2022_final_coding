@@ -37,8 +37,7 @@ input(52).txt
 Find the sum of y values for all records for which z is odd.
 
 */
-//<------------------------------------------------------------SOLUTION---------------------------------------------------------------->//
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -89,7 +88,7 @@ int main()
 
 }
 
-
+*/
 
 //<------------------------------------------------------------------------------------------------------------------------------------>//
 
@@ -203,7 +202,7 @@ int main()
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+//burda sadece min salary ya max salary isteyir
 
 #include <stdio.h>
 #include <string.h>
@@ -264,9 +263,166 @@ if (p.salary < min)
 
 
 
+//<--------------------------------------------------------------------------------------------------------------------------->//
+
+/*
+Question 2
+struct person
+
+{
+
+char surname［ 11 ］; // 10 bytes surname + 0 byte
+
+int age; // from 10 to 99
+
+int salary; // from 100 to 999
+
+};
+
+Input contains data as a sequence of structures person. 
+
+ Find the surname of a person with minimum salary. 
+
+If there are multiple people with minimum salary, print the information from a record that is closer to the end of the file.
+
+*/
+/*
+
+#include <stdio.h>
+#include <string.h>
+
+struct person
+{
+    char surname[11];
+    int age;
+    int salary;
+    int number; // Store the position of the person in the file
+};
+
+struct person p, minPerson;
+int i = 0; // Initialize the counter
+int main()
+{
+    FILE *fp;
+
+    fp = fopen("C:\\Users\\ASUS\\Downloads\\input (22).txt", "r");
+
+ /*   if (fp == NULL)
+    {
+        perror("Error opening the file");
+        return 1;
+    }*/
+
+    int min = 100000;
+    int max = -5555;
+
+    while (fscanf(fp, "%10s%2d%3d", p.surname, &p.age, &p.salary) == 3)
+    {
+        i++;
+
+        if (p.salary <= min)
+        {
+            min = p.salary;
+            max = i; // Update the position of the latest person with the minimum salary
+          minPerson = p; // Store the current person as the one with the minimum salary ONEMLI
+        }
+    }
+
+    // Print the information of the person with the minimum salary closer to the end of the file
+    printf("Surname of person with minimum salary: %s\n", minPerson.surname);
+  //  printf("Age: %d\n", minPerson.age);
+  //  printf("Salary: %d\n", minPerson.salary);
+//    printf("Position in the file: %d\n", max);
+
+    fclose(fp);
+
+    return 0;
+}
+
+*/
+
+//<------------------------------------------------------------------------------------------------------------------------------->//
+/*
+Question 3
+struct person
+
+{
+
+char surname［ 11 ］; // 10 bytes surname + 0 byte
+
+int age; // from 10 to 99
+
+int salary; // from 100 to 999
+
+};
+
+Input contains data as a sequence of structures person. 
+
+input.txt
+
+Find the surname of a person with minimum salary. 
+
+If there are multiple people with minimum salary, print the information from a record that is closer to the beginning of the file.
+
+*/
+/*
+
+#include <stdio.h>
+#include <string.h>
+
+struct person
+{
+    char surname[11];
+    int age;
+    int salary;
+    int number; // Store the position of the person in the file
+};
+
+struct person p, minPerson;
+int i = 0; // Initialize the counter
+int main()
+{
+    FILE *fp;
+
+    fp = fopen("C:\\Users\\ASUS\\Downloads\\input (24).txt", "r");
+
+    if (fp == NULL)
+    {
+        perror("Error opening the file");
+        return 1;
+    }
+
+    int min = 100000;
+    int minPosition = 0;
+
+    while (fscanf(fp, "%10s%2d%3d", p.surname, &p.age, &p.salary) == 3)
+    {
+        i++;
+
+        if (p.salary < min || (p.salary == min && i < minPosition))//ferqi butrdadir ki eger eynilik olsa deyiremki i kicik olan goturulsun EGER BEGINNING OF FILE'A CLOSER DEYIRSE
+        {
+            min = p.salary;
+            minPosition = i; // Update the position of the latest person with the minimum salary
+            minPerson = p;   // Store the current person as the one with the minimum salary
+        }
+    }
+
+    // Print the information of the person with the minimum salary closer to the beginning of the file
+    printf("Surname of person with minimum salary: %s\n", minPerson.surname);
+    printf("Age: %d\n", minPerson.age);
+    printf("Salary: %d\n", minPerson.salary);
+    printf("Position in the file (Closer to the Beginning): %d\n", minPosition);
+
+    // OR, if you want the one closer to the end of the file:
+    // printf("Position in the file (Closer to the End): %d\n", i - minPosition + 1);
+
+    fclose(fp);
+
+    return 0;
+}
 
 
-
+*/
 
 
 
