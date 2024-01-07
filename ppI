@@ -15,8 +15,7 @@ int main(void)
 	return 0;
 }
 
-
-
+//<------------------------------------------------------------------------------------------------------------------------------------>//
 
 
 #include <stdio.h>
@@ -40,14 +39,41 @@ int main()
 
     FILE* fp;
 
-    fp = fopen("input.txt", "r");
-    // fseek(fp, 0, SEEK_END);
+    fp = fopen("C:\\Users\\ASUS\\Downloads\\input(42) (2).txt", "r");
+     fseek(fp, 0, SEEK_END);
 
-   // int min = 1000
+   // int min = 1000;
+
+    while (fscanf(fp, "%2d%2d%2d", &p.x, &p.y, &p.z) == 3)
+
+    {
+
+        if ((p.z % 2) != 0)
+
+        {
+
+            s += p.y;
+
+        }
+
+    }
+
+   // printf("%d\n", s); //  ... 1st line
+ printf("%d", ftell(fp));
+
+    return 0;
+
+    //int cnt = 0;
 
 
--------------------------------------------------------------------------------------
-Two dimensional array of size n * n is given. Find the sum of elements in its k-th row. Row numbers start from 1.
+
+}
+
+//<------------------------------------------------------------------------------------------------------------------------------------>//
+
+
+
+	Two dimensional array of size n * n is given. Find the sum of elements in its k-th row. Row numbers start from 1.
 Input
 First line contains the size of array n (n ≤ 100) and number k. Each of the next n lines contains n integers.
 Output
@@ -61,6 +87,8 @@ Sample Output
 13
 
 input.txt
+ 			
+
 
 #include <stdio.h>
 int i, j, n, k, sum = 0;
@@ -90,7 +118,10 @@ int main()
     return 0;
 
 }
----------------------------------------------------------------------------------------------
+
+
+//<------------------------------------------------------------------------------------------------------------------------------------>//
+
 
 
 
@@ -144,58 +175,9 @@ int main()
     return 0;
 
 }
--------------------------------------------------------------------------------------------------
 
 
-#include <stdio.h>
-#include <string.h>
 
-//#define SIZE 6
-
-struct point
-
-{
-    int x;
-    int y;
-    int z;
-
-} p;
-
-int s = 0;
-int main()
-
-{
-
-    FILE* fp;
-
-    fp = fopen("input.txt", "r");
-    // fseek(fp, 0, SEEK_END);
-
-   // int min = 1000;
-
-    while (fscanf(fp, "%2d%2d%2d", &p.x, &p.y, &p.z) == 3)
-
-    {
-
-        if ((p.x % 2) != 0)
-
-        {
-
-            s += p.z;
-
-        }
-
-    }
-
-    printf("%d\n", s); //  ... 1st line
-
-
-    //int cnt = 0;
-
-
-    return 0;
-
-}
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -247,7 +229,8 @@ if (p.salary < min)
 
     }
 
-    printf("%d\n", min); //  ... 1st line
+    printf("%d\n", min); //  ... 1st line//bele olanda 1k verir
+    // printf("%d", ftell(fp)); //bele 3238
 
 
     //int cnt = 0;
