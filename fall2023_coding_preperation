@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <math.h>
 int k, n, res;
@@ -144,64 +145,6 @@ int main()
 //<------------------------------------------------------------------------------------------------------------------------------------>//
 
 
-
-
-
-#include <stdio.h>
-#include <string.h>
-
-//#define SIZE 6
-
-struct point
-
-{
-    int x;
-    int y;
-    int z;
-
-} p;
-
-int s = 0;
-int main()
-
-{
-
-    FILE* fp;
-
-    fp = fopen("input.txt", "r");
-    // fseek(fp, 0, SEEK_END);
-
-   // int min = 1000;
-
-    while (fscanf(fp, "%2d%2d%2d", &p.x, &p.y, &p.z) == 3)
-
-    {
-
-        if ((p.z % 2) != 0)
-
-        {
-
-            s += p.y;
-
-        }
-
-    }
-
-    printf("%d\n", s); //  ... 1st line
-
-
-    //int cnt = 0;
-
-
-    return 0;
-
-}
-
-
-
-
-
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //burda sadece min salary ya max salary isteyir
 
 #include <stdio.h>
@@ -323,7 +266,7 @@ int main()
         if (p.salary <= min)
         {
             min = p.salary;
-            max = i; // Update the position of the latest person with the minimum salary
+            max = i; // Update the position of the latest person with the minimum salary, burda end of file'a yaxin deyir deye her defe sonraki i'a update edirik
           minPerson = p; // Store the current person as the one with the minimum salary ONEMLI
         }
     }
@@ -409,9 +352,9 @@ int main()
 
     // Print the information of the person with the minimum salary closer to the beginning of the file
     printf("Surname of person with minimum salary: %s\n", minPerson.surname);
-    printf("Age: %d\n", minPerson.age);
-    printf("Salary: %d\n", minPerson.salary);
-    printf("Position in the file (Closer to the Beginning): %d\n", minPosition);
+   // printf("Age: %d\n", minPerson.age);
+  //  printf("Salary: %d\n", minPerson.salary);
+ //   printf("Position in the file (Closer to the Beginning): %d\n", minPosition);
 
     // OR, if you want the one closer to the end of the file:
     // printf("Position in the file (Closer to the End): %d\n", i - minPosition + 1);
